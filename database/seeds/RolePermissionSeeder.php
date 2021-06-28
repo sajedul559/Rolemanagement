@@ -50,6 +50,8 @@ class RolePermissionSeeder extends Seeder
         {
 
             $permission = Permission::create(['name' => $permissions[$i]]);
+            $roleSuperAdmin->givePermissionTo($permission);
+            $permission->assignRole($roleSuperAdmin);
         }
 
     }
